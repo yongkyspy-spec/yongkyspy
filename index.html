@@ -3,38 +3,169 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portofolio Saya</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Portfolio Saya | Frap Digital Desaigner</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-body: #f4f7f6;
+            --bg-card: #ffffff;
+            --text-main: #333333;
+            --accent: #3498db;
+            --nav-bg: rgba(44, 62, 80, 0.95);
+        }
+
+        [data-theme="dark"] {
+            --bg-body: #121212;
+            --bg-card: #1e1e1e;
+            --text-main: #e0e0e0;
+            --accent: #5dade2;
+            --nav-bg: rgba(15, 15, 15, 0.95);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; transition: background 0.3s, color 0.3s; }
+        body { background-color: var(--bg-body); color: var(--text-main); line-height: 1.6; }
+        
+        nav {
+            background: var(--nav-bg); backdrop-filter: blur(10px); color: white;
+            padding: 1rem 5%; display: flex; justify-content: space-between;
+            align-items: center; position: fixed; width: 100%; top: 0; z-index: 1000;
+        }
+
+        header {
+            height: 80vh; background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+            url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1350&q=80');
+            background-size: cover; background-position: center;
+            display: flex; flex-direction: column; justify-content: center; align-items: center; color: white;
+        }
+
+        .social-links a { color: white; font-size: 1.5rem; margin: 0 10px; transition: 0.3s; }
+        .social-links a:hover { color: var(--accent); transform: scale(1.2); }
+
+        section { padding: 80px 10%; }
+        .section-title { text-align: center; margin-bottom: 40px; }
+        .section-title h2 { font-size: 2rem; border-bottom: 3px solid var(--accent); display: inline-block; padding-bottom: 10px; }
+
+        /* --- Project Gallery Grid --- */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .project-item {
+            background: var(--bg-card);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+        .project-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .project-item:hover .project-img {
+            transform: scale(1.1);
+        }
+
+        .project-info {
+            padding: 20px;
+        }
+
+        .project-info h3 { margin-bottom: 10px; font-size: 1.2rem; }
+        .project-info p { font-size: 0.9rem; color: #777; }
+
+        /* --- Form & UI --- */
+        .theme-switch { position: relative; width: 40px; height: 20px; cursor: pointer; }
+        .theme-switch input { display:none; }
+        .slider { background: #ccc; position: absolute; top: 0; left: 0; right: 0; bottom: 0; border-radius: 34px; }
+        .slider:before { background: white; content: ""; height: 14px; width: 14px; left: 3px; bottom: 3px; position: absolute; border-radius: 50%; transition: 0.3s; }
+        input:checked + .slider { background: var(--accent); }
+        input:checked + .slider:before { transform: translateX(20px); }
+
+        footer { background: #111; color: white; text-align: center; padding: 40px; margin-top: 50px; }
+    </style>
 </head>
 <body>
 
     <nav>
-        <div class="logo">MyBrand</div>
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Project</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
+        <div class="logo">PORTFOLIO</div>
+        <div style="display: flex; align-items: center;">
+            <i class="fas fa-sun" style="margin-right: 8px; font-size: 0.8rem;"></i>
+            <label class="theme-switch">
+                <input type="checkbox" id="checkbox">
+                <span class="slider"></span>
+            </label>
+        </div>
     </nav>
 
-    <header class="hero">
-        <div class="hero-content">
-			<img src="Jakson.PNG" alt="Foto Profile Saya" class="Profile-img">
-            <h1>Halo, Saya <span class="highlight">Fariz Rayyan Akmal Putra</span></h1>
-            <p>Web Developer & Creative Designer</p>
-            <button id="btnAction" class="main-btn">Lihat Karya</button>
+    <header>
+        <h1 data-aos="zoom-in">[Frap Digital Desaigner]</h1>
+        <p data-aos="fade-up" data-aos-delay="200">Creative Developer & Photography Enthusiast</p>
+        <div class="social-links" data-aos="fade-up" data-aos-delay="400">
+            <a href="https://www.instagram.com/frapstn1c_?igsh=MXJnMmN0ZzJhbHJlag%3D%3D&utm_source=qr"><i class="fab fa-instagram"></i></a>
+            <a href="https://github.com/yongkyspy-spec/yongkyspy"><i class="fab fa-github"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
         </div>
     </header>
 
-    <section class="about">
-        <h2>Tentang Saya</h2>
-        <p>Saya suka membangun website yang cepat, fungsional, dan terlihat indah.</p>
+    <section id="projects">
+        <div class="section-title" data-aos="fade-up">
+            <h2>Karya Saya</h2>
+        </div>
+        
+        <div class="project-grid">
+            <div class="project-item" data-aos="fade-up" data-aos-delay="100">
+                <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=600&q=80" alt="Project 1" class="project-img">
+                <div class="project-info">
+                    <h3>Web Design Project</h3>
+                    <p>Desain antarmuka modern untuk aplikasi manajemen tugas.</p>
+                </div>
+            </div>
+            <div class="project-item" data-aos="fade-up" data-aos-delay="200">
+                <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=600&q=80" alt="Project 2" class="project-img">
+                <div class="project-info">
+                    <h3>Coding Workshop</h3>
+                    <p>Pengembangan sistem backend menggunakan Node.js.</p>
+                </div>
+            </div>
+            <div class="project-item" data-aos="fade-up" data-aos-delay="300">
+                <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=600&q=80" alt="Project 3" class="project-img">
+                <div class="project-info">
+                    <h3>Personal Branding</h3>
+                    <p>Strategi visual untuk membangun profil digital yang kuat.</p>
+                </div>
+            </div>
+        </div>
     </section>
 
     <footer>
-        <p>&copy; 2026 Dibuat Oleh Fariz Rayyan Akmal Putra</p>
+        <p>&copy; 2026 Project By: [Fariz Rayyan Akmal Putra] | Simple Style </p>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1000, once: true });
+
+        const toggle = document.querySelector('#checkbox');
+        const currentTheme = localStorage.getItem('theme');
+
+        if (currentTheme) {
+            document.documentElement.setAttribute('data-theme', currentTheme);
+            if (currentTheme === 'dark') toggle.checked = true;
+        }
+
+        toggle.addEventListener('change', (e) => {
+            const theme = e.target.checked ? 'dark' : 'light';
+            document.documentElement.setAttribute('data-theme', theme);
+            localStorage.setItem('theme', theme);
+        });
+    </script>
 </body>
 </html>
