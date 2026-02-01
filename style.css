@@ -1,0 +1,144 @@
+/* Reset Dasar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
+}
+
+/* Navbar */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10%;
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+}
+
+/* Hero Section */
+.hero {
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.highlight {
+    color: #ffde59;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 10px;
+}
+
+.main-btn {
+    margin-top: 20px;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 25px;
+    background: #ffde59;
+    color: #333;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.main-btn:hover {
+    transform: scale(1.1);
+    background: #fff;
+}
+
+/* About Section */
+.about {
+    padding: 80px 10%;
+    text-align: center;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #333;
+    color: white;
+}
+
+/* Media Query untuk layar HP (Maksimal lebar 768px) */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column; /* Mengatur Logo dan Menu jadi atas-bawah */
+        padding: 15px;
+    }
+
+    nav ul {
+        margin-top: 15px;
+        flex-direction: column; /* Menu list jadi berbaris ke bawah */
+        gap: 10px;
+        text-align: center;
+    }
+
+    nav ul li {
+        margin-left: 0; /* Menghapus jarak samping yang tadi kita buat */
+    }
+
+    .hero h1 {
+        font-size: 2.2rem; /* Mengecilkan ukuran font agar tidak terpotong */
+    }
+
+    .hero {
+        padding: 0 20px;
+    }
+}
+
+/* Style untuk Foto Profil */
+.profile-img {
+    width: 150px;         /* Lebar foto */
+    height: 150px;        /* Tinggi foto */
+    border-radius: 50%;   /* Membuat foto jadi bulat sempurna */
+    object-fit: cover;    /* Memastikan foto tidak gepeng */
+    border: 5px solid rgba(255, 255, 255, 0.3); /* Bingkai tipis transparan */
+    margin-bottom: 20px;  /* Jarak antara foto dan teks */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2); /* Efek bayangan agar elegan */
+}
+
+.img-container {
+  width: 300px;
+  height: 200px;
+  overflow: hidden; /* Penting agar gambar tidak "tumpah" */
+  border-radius: 10px;
+}
+
+.img-container img {
+  width: 100%;
+  transition: transform 0.5s ease; /* Durasi animasi */
+}
+
+.img-container:hover img {
+  transform: scale(1.1); /* Zoom masuk 10% */
+}
